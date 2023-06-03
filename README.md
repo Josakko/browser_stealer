@@ -1,9 +1,5 @@
-<!-- <h1 align="center">Browser Stealer<h1> -->
+<h1 align="center">Browser Stealer<h1>
 
-<p align="center">
-  <img src="https:\\github.com\Josakko\browser_stealer\blob\main\img\banner.png?raw=true" alt="Browser Stealer">
-</p>
-  
 <p align="center">
   <img src="https://img.shields.io/github/languages/top/Josakko/browser_stealer" </a>
   <img src="https://img.shields.io/github/last-commit/Josakko/browser_stealer" </a>
