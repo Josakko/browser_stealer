@@ -17,10 +17,14 @@
 <h4>
 
 <p align="center">
-```pip install browser_stealer```
+```
+pip install browser_stealer
+```
 </p>
 
-```pip install browser_stealer```
+```
+pip install browser_stealer
+```
 
 ## Usage
 
