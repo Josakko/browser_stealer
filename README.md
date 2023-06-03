@@ -5,10 +5,10 @@
 </p>
   
 <p align="center">
-  <img src="https:\\img.shields.io\github\languages\top\Josakko\browser_stealer" </a>
-  <img src="https:\\img.shields.io\github\last-commit\Josakko\browser_stealer" </a>
-  <img src="https:\\img.shields.io\github\stars\Josakko\browser_stealer" </a>
-  <img src="https:\\img.shields.io\github\forks\Josakko\browser_stealer" </a>
+  <img src="https:\\img.shields.io\github\languages\top\Josakko\browser_stealer">
+  <img src="https:\\img.shields.io\github\last-commit\Josakko\browser_stealer">
+  <img src="https:\\img.shields.io\github\stars\Josakko\browser_stealer">
+  <img src="https:\\img.shields.io\github\forks\Josakko\browser_stealer">
 </p>
 
 <h4 align="center">
