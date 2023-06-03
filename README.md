@@ -16,12 +16,6 @@
     <span style="color: #fff; font-weight: normal;">v1.0.0</span>
 <h4>
 
-<p align="center">
-```
-pip install browser_stealer
-```
-</p>
-
 ```
 pip install browser_stealer
 ```
