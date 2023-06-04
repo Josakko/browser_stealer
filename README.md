@@ -9,7 +9,7 @@
 
 <h4 align="center">
   <span style="color: #fff; font-weight: bold;">Browser Stealer</span>
-  <span style="color: #fff; font-weight: normal;">v1.0.0</span>
+  <span style="color: #fff; font-weight: normal;">v1.1.0</span>
 </h4>
 
 ```
