@@ -22,7 +22,7 @@ Since module got removed from pypi you have to install it manually, to install i
 - *IMPORTANT* - Do not rename the downloaded file, that might prevent you from installing the module
   
 ```
-pip install browser_stealer.whl
+pip install browser_stealer-<version>-py3-none-any.whl
 ```
 
 After running the command you can import and use browser stealer in your own projects!
