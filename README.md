@@ -39,7 +39,7 @@ browser_stealer.run()
 Or if you want to add your own chromium based browser or other profiles for existing ones:
 
 ```py
-import browser_stealer
+import browser_stealer, os
 
 
 def MyBrowser():
